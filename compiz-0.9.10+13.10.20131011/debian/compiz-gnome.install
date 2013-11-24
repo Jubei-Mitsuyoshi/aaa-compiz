@@ -1,0 +1,7 @@
+debian/tmp/usr/share/applications/compiz.desktop usr/share/gnome/wm-properties/
+debian/tmp/usr/share/gnome-control-center
+debian/tmp/usr/share/gconf/schemas/*.schemas
+debian/tmp/usr/share/glib-2.0/schemas/*.xml
+debian/tmp/usr/bin/gtk-window-decorator
+debian/tmp/usr/lib/compizconfig/backends/libgsettings.so
+debian/tmp/usr/lib/libcompizconfig_gsettings_backend.so
