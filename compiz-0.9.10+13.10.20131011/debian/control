@@ -6,7 +6,6 @@ XSBC-Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Sean Finney <seanius@debian.org>, Cyril Brulebois <kibi@debian.org>
 Build-Depends: cmake (>= 2.6),
                debhelper (>= 9~),
-               dh-translations,
                intltool,
                libtool,
                pkg-config,
@@ -277,44 +276,3 @@ Description: Compiz configuration settings manager
  usability of the X Window System and provide increased productivity.
  .
  This package contains the compizconfig settings manager.
-
-Package: compiz-plugins-main
-Depends: compiz-plugins, ${misc:Depends}
-Architecture: all
-Section: oldlibs
-Description: transitional dummy package.
- This package ensures a clean upgrade path, and can be safely removed
- after the upgrade.
-
-Package: compiz-plugins-main-default
-Depends: compiz-plugins-default, ${misc:Depends}
-Architecture: all
-Section: oldlibs
-Description: transitional dummy package.
- This package ensures a clean upgrade path, and can be safely removed
- after the upgrade.
-
-Package: compiz-plugins-main-dev
-Depends: compiz-dev, ${misc:Depends}
-Architecture: all
-Section: oldlibs
-Description: transitional dummy package.
- This package ensures a clean upgrade path, and can be safely removed
- after the upgrade.
-
-Package: compiz-plugins-extra
-Depends: compiz-plugins, ${misc:Depends}
-Architecture: all
-Section: oldlibs
-Description: transitional dummy package.
- This package ensures a clean upgrade path, and can be safely removed
- after the upgrade.
-
-Package: compizconfig-backend-gconf
-Depends: compiz-gnome, gconf2, ${misc:Depends}
-Architecture: all
-Section: oldlibs
-Description: transitional dummy package.
- This package ensures a clean upgrade path, and can be safely removed
- after the upgrade.
-
