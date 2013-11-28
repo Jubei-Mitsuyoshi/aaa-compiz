@@ -1,4 +1,4 @@
-compiz (1:0.9.10+13.10.20131011-aaasid) unstable; urgency=low
+compiz (1:0.9.10+13.10.20131011) unstable; urgency=low
 
   * recompiled for aaasid by me many changes applied from the original
     ubuntu package, all unity references removed, gconf schems modified,

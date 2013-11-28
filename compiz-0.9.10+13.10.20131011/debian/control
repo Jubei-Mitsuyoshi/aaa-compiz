@@ -61,7 +61,7 @@ Standards-Version: 3.9.3
 Vcs-Bzr: https://code.launchpad.net/~compiz-team/compiz/0.9.10
 
 Package: compiz
-Architecture: all
+Architecture: any
 Provides: x-window-manager
 Depends: compiz-core (>= ${source:Version}),
          compiz-plugins-default (>= ${source:Version}),
