@@ -1,7 +1,7 @@
 Source: compiz
 Section: x11
 Priority: optional
-Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Maintainer: Jubei Mitsuyoshi <jubei.house.of.five.masters@gmail.com>
 XSBC-Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Sean Finney <seanius@debian.org>, Cyril Brulebois <kibi@debian.org>
 Build-Depends: cmake (>= 2.6),
@@ -74,7 +74,10 @@ Description: OpenGL window and compositing manager
  This metapackage provides the components necessary for running compiz. It
  provides the compiz core, a set of standard plugins, a window decorator using
  the Gtk toolkit and the files necessary to integrate compiz with the GNOME
- desktop environment.
+ desktop environment
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: compiz-core
 Architecture: any
@@ -94,6 +97,9 @@ Description: OpenGL window and compositing manager
  "composite manager" allows windows and other graphics to be combined together
  to create composite images. Compiz achieves its stunning effects by doing
  both of these functions.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: compiz-dev
 Architecture: any
@@ -133,6 +139,9 @@ Description: OpenGL window and compositing manager - development files
  .
  This package contains the headers and libraries needed to compile compiz
  plugins.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: compiz-gnome
 Architecture: any
@@ -157,6 +166,9 @@ Description: OpenGL window and compositing manager - GNOME window decorator
  .
  This package contains files needed to integrate compiz with the GNOME desktop
  environment.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: compiz-plugins-default
 Architecture: any
@@ -175,6 +187,9 @@ Description: OpenGL window and compositing manager - default plugins
  .
  This package contains the default compiz plugins we activate in ubuntu coming
  with core compiz.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: compiz-plugins
 Architecture: any
@@ -194,6 +209,9 @@ Description: OpenGL window and compositing manager - plugins
  .
  This package contains the plugins that come with compiz but not officially
  supported.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: libdecoration0
 Architecture: any
@@ -203,6 +221,9 @@ Description: Compiz window decoration library
  The window decoration library is responsible for drawing the window borders
  and title bar of windows managed by Compiz. It is used by window decorators
  like gtk-window-decorator.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: libdecoration0-dev
 Section: libdevel
@@ -218,6 +239,9 @@ Description: Compiz window decoration library - development files
  .
  This package contains files required for developing window decorators
  compatible with Compiz.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: libcompizconfig0
 Architecture: any
@@ -231,6 +255,9 @@ Description: Settings library for plugins - OpenCompositing Project
  rich desktop experience.
  .
  This package contains the library for plugins to configure settings.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: libcompizconfig0-dev
 Architecture: any
@@ -246,6 +273,9 @@ Description: Development file for plugin settings - OpenCompositing Project
  .
  This package contains the headers and development files needed to
  build plugins with settings support.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: python-compizconfig
 Architecture: any
@@ -260,6 +290,9 @@ Description: Compizconfig bindings for python
  unrivalled usefulness
  .
  This package provides python bindings for the compizconfig system.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
 
 Package: compizconfig-settings-manager
 Architecture: all
@@ -275,3 +308,6 @@ Description: Compiz configuration settings manager
  usability of the X Window System and provide increased productivity.
  .
  This package contains the compizconfig settings manager.
+ .
+ The *aaa versions of this package are specially modified for debian and aaa
+ if running a ubuntu box please use the regular compiz from ubuntu repositories.
