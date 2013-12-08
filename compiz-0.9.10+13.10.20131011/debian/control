@@ -2,7 +2,6 @@ Source: compiz
 Section: x11
 Priority: optional
 Maintainer: Jubei Mitsuyoshi <jubei.house.of.five.masters@gmail.com>
-XSBC-Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
 Uploaders: David Nusinow <dnusinow@debian.org>, Sean Finney <seanius@debian.org>, Cyril Brulebois <kibi@debian.org>
 Build-Depends: cmake (>= 2.6),
                debhelper (>= 9~),
