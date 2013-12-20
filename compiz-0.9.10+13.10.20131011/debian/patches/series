@@ -1,3 +1,4 @@
 valid_ccsm_desktop_file.patch
 virtualbox_hang.patch
 ccp_plugin.patch
+ccsm_remove_redundant_sliders.patch

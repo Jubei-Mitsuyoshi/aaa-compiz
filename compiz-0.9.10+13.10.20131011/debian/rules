@@ -9,15 +9,37 @@ gles2_architectures := armel armhf
 
 CORE_ABIVERSION := $(shell sed -rn 's/^\#define[[:space:]]+CORE_ABIVERSION[[:space:]]+//p' include/core/abiversion.h )
 
+override_dh_quilt_patch:
+	#keeping the multi arch shit
+	dh_quilt_patch
+	if test -r debian/patches/series.$(DEB_HOST_ARCH); then \
+	  pc=".pc.$(DEB_HOST_ARCH)"; \
+	  test -d "$(CURDIR)/$$pc" || mkdir "$(CURDIR)/$$pc"; \
+	  cp debian/patches/series.$(DEB_HOST_ARCH) $(CURDIR)/$$pc/series; \
+	  cd $(CURDIR); \
+	  QUILT_PC="$$pc" quilt upgrade || true; \
+	  QUILT_PC="$$pc" QUILT_PATCHES="debian/patches/" quilt push -a || true; \
+	fi; \
+
+override_dh_quilt_unpatch:
+	if test -r debian/patches/series.$(DEB_HOST_ARCH); then \
+	  pc=".pc.$(DEB_HOST_ARCH)"; \
+	  cd $(CURDIR); \
+	  QUILT_PC="$$pc" QUILT_PATCHES="debian/patches/" quilt pop -a || true; \
+	fi; \
+	dh_quilt_unpatch
+
+
 override_dh_auto_configure:
 	# currently, segfault if CMAKE_BUILD_TYPE=Release
 	LDFLAGS=$(shell echo $$LDFLAGS | sed -e 's/\-Wl,-Bsymbolic-functions //')
 
         # right now, xorg-gtest won't compile on arm.
+        #aaa not using that crap anyway
 ifeq ($(DEB_HOST_ARCH),$(findstring $(DEB_HOST_ARCH), $(gles2_architectures)))
 	dh_auto_configure -- -DCOMPIZ_BUILD_WITH_RPATH=FALSE -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCOMPIZ_PACKAGING_ENABLED=TRUE -DUSE_GSETTINGS=ON -DCOMPIZ_DISABLE_GS_SCHEMAS_INSTALL=OFF -DCOMPIZ_DISABLE_PLUGIN_KDE=ON -DCOMPIZ_BUILD_TESTING=OFF -DUSE_KDE4=OFF -DUSE_GCONF=OFF -DBUILD_GLES=ON -DBUILD_XORG_GTEST=OFF
 else
-	dh_auto_configure -- -DCOMPIZ_BUILD_WITH_RPATH=FALSE -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCOMPIZ_PACKAGING_ENABLED=TRUE -DUSE_GSETTINGS=ON -DCOMPIZ_DISABLE_GS_SCHEMAS_INSTALL=OFF -DCOMPIZ_DISABLE_PLUGIN_KDE=ON -DCOMPIZ_BUILD_TESTING=OFF -DUSE_KDE4=OFF -DUSE_GCONF=OFF
+	dh_auto_configure -- -DCOMPIZ_BUILD_WITH_RPATH=FALSE -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCOMPIZ_PACKAGING_ENABLED=TRUE -DUSE_GSETTINGS=ON -DCOMPIZ_DISABLE_GS_SCHEMAS_INSTALL=OFF -DCOMPIZ_DISABLE_PLUGIN_KDE=ON -DCOMPIZ_BUILD_TESTING=OFF -DUSE_KDE4=OFF -DUSE_GCONF=OFF -DBUILD_XORG_GTEST=OFF
 endif
 
 override_dh_install:
@@ -46,7 +68,9 @@ endif
 	#rm -rf debian/tmp/usr/share/gconf/schemas/
 
 	# ugly hack to install xml files
+	mkdir -p debian/tmp/usr/share/gnome-control-center/keybindings
 	mkdir -p debian/tmp/usr/share/cinnamon-control-center/keybindings
+	find */gtk/gnome -name *.xml | xargs cp -at debian/tmp/usr/share/gnome-control-center/keybindings/
 	find */gtk/gnome -name *.xml | xargs cp -at debian/tmp/usr/share/cinnamon-control-center/keybindings/
 
 	dh_install --fail-missing

@@ -1,8 +1,9 @@
-compiz (1:0.9.10+13.10.20131011-aaa) unstable; urgency=low
+compiz (1:0.9.10+13.10.20131011-aaa1) unstable; urgency=low
 
   * recompiled for aaa by me many changes applied from the original
     ubuntu package, all unity references removed, gconf schems modified,
     other various changes
+   * made compatible with gnome again
 
  -- Jubei Mitsuyoshi <jubei.house.of.five.masters@gmail.com>  Sat, 23 Nov 2013 20:32:00 +0100
 
